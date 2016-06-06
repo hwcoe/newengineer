@@ -1,0 +1,15 @@
+/* --------------------------------------------------------------
+
+   TYPOGRAPHY OVERRIDES
+   
+-------------------------------------------------------------- */
+// import webfonts 
+@import '_font-stacks';
+///
+
+* {
+	font-family: 'gentona', Helvetica, Arial, sans-serif;
+}
+.x-brand {
+	font-family: 'gentona', Helvetica, Arial, sans-serif !important;
+}
