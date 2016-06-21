@@ -7,9 +7,22 @@
 @import '_font-stacks';
 ///
 
+// font overrides
 * {
 	font-family: 'gentona', Helvetica, Arial, sans-serif;
 }
-.x-brand {
-	font-family: 'gentona', Helvetica, Arial, sans-serif !important;
+body {
+
+	h1, h2, h3, h4, h5, h6, 
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		font-family: 'gentona', Helvetica, Arial, sans-serif;
+	}
+	h1, h2, 
+	.h1, .h2 {
+		text-transform: uppercase;
+	}
+
+	.x-brand {
+		font-family: 'quadon', Georgia, serif;
+	}
 }
