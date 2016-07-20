@@ -1,8 +1,3 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-.DS_Store
-
 # Folder config file
 Desktop.ini
 
@@ -20,7 +15,6 @@ $RECYCLE.BIN/
 
 # Sass
 .sass-cache/
-*.css.map
 
 #Wordpress
 *.log
@@ -45,3 +39,12 @@ wp-content/wp-cache-config.php
 cgi-bin/
 sftp-config.json
 phpinfo.php
+
+# OS generated files 
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
