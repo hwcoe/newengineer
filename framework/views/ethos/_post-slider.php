@@ -9,7 +9,7 @@
 $is_blog    = is_home();
 $is_archive = is_category() || is_tag();
 
-if ( $is_blog || $is_archive ) :
+if ( $is_blog || $is_archive || is_front_page() ) :
 
   if ( $is_blog ) {
     $info = array( 'blog', NULL, NULL, '_x_ethos_post_slider_blog_display' );
@@ -18,13 +18,13 @@ if ( $is_blog || $is_archive ) :
     $info = array( 'archive', $type, get_queried_object_id(), '_x_ethos_post_slider_archives_display' );
   }
 
-  $slider_enabled = x_get_option( 'x_ethos_post_slider_' . $info[0] . '_enable' ) == '1';
+  $slider_enabled = x_get_option( 'x_ethos_post_slider_' . $info[0] . '_enable', '' ) == '1';
   $count          = x_get_option( 'x_ethos_post_slider_' . $info[0] . '_count' );
   $display        = x_get_option( 'x_ethos_post_slider_' . $info[0] . '_display' );
 
   $blog_slider_is_enabled    = $slider_enabled && $is_blog;
   $archive_slider_is_enabled = $slider_enabled && $is_archive;
-  $is_enabled                = $blog_slider_is_enabled || $archive_slider_is_enabled;
+  $is_enabled                = $blog_slider_is_enabled || $archive_slider_is_enabled || is_front_page();
 
   switch ( $display ) {
     case 'most-commented' :
@@ -55,7 +55,15 @@ if ( $is_blog || $is_archive ) :
       );
       break;
   }
-
+  
+  if (is_front_page()) {
+    $args = array(
+       'post_type'      => 'post',
+        'posts_per_page' => $count,
+        'orderby'        => 'date',
+        'category_name'  => 'featured' 
+    );
+  }
   ?>
 
   <?php if ( $is_enabled ) : ?>
@@ -69,7 +77,7 @@ if ( $is_blog || $is_archive ) :
           <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
             <li class="x-slide">
-              <article <?php post_class( 'x-post-slider-entry' ); ?> style="<?php echo x_ethos_entry_cover_background_image_style(); ?>">
+              <article id="post-<?php the_ID(); ?>" <?php post_class( 'x-post-slider-entry' ); ?> style="<?php echo x_ethos_entry_cover_background_image_style(); ?>">
                 <a href="<?php the_permalink(); ?>">
                   <div class="cover">
                     <div class="middle">
