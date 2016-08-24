@@ -25,4 +25,14 @@ body {
 	.x-brand {
 		font-family: 'quadon', Georgia, serif;
 	}
+	.boxed {
+		padding-bottom: 25px;
+		letter-spacing: 0.25em;
+		color: $grayLight;
+		span {
+			display: inline-block;
+			border: 3px solid $grayLight;
+			padding: 7px 10px;
+		}
+	}
 }
