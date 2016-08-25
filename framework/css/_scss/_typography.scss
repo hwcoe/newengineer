@@ -29,6 +29,10 @@ body {
 		padding-bottom: 25px;
 		letter-spacing: 0.25em;
 		color: $grayLight;
+		a {
+			color: $grayLight;
+		}
+
 		span {
 			display: inline-block;
 			border: 3px solid $grayLight;
