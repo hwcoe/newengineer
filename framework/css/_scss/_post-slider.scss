@@ -1,0 +1,23 @@
+// =============================================================================
+// _POST-SLIDER.SCSS
+// -----------------------------------------------------------------------------
+// Site styles.
+// =============================================================================
+
+.x-post-slider-entry {
+	.featured-excerpt {
+		color: $white;
+		display:block;
+		@include font-size(1.8);
+	}
+	.featured-view {
+		@include letter-spacing();
+	}
+	@include break(cubs) {
+	    .featured-excerpt { @include font-size(1.6); }
+	  }
+
+	  @include break(middle-bear) {
+	    .featured-excerpt { display: none; }
+	  }
+}

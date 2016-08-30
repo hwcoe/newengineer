@@ -98,7 +98,13 @@
   // font-size: $sizeValue + rem;
 }
 
+// Letter Spacing
+// =============================================================================
+//
 
+@mixin letter-spacing($spacingValue: 0.75) {
+    letter-spacing: $spacingValue + px;
+}
 
 // Text Overflow
 // =============================================================================

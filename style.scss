@@ -11,19 +11,20 @@ Built using style.scss and its imports
 
 // Functions, Variables, and Mixins
 // =============================================================================
-@import 'framework/css/_scss/inc/_variables';
-@import 'framework/css/_scss/inc/_mixins';
+@import 'framework/css/_scss/inc/variables';
+@import 'framework/css/_scss/inc/mixins';
 
 // Typography
 // =============================================================================
-@import 'framework/css/_scss/_typography';
+@import 'framework/css/_scss/typography';
 
 // Shortcodes
 // =============================================================================
-@import 'framework/css/_scss/_shortcodes';
+@import 'framework/css/_scss/shortcodes';
 
 // Components
 // =============================================================================
-@import 'framework/css/_scss/_post-carousel';
+@import 'framework/css/_scss/post-carousel';
+@import "framework/css/_scss/post-slider";
 
  

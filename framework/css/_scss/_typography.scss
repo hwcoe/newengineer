@@ -19,7 +19,8 @@ body {
 	}
 	h1, h2, 
 	.h1, .h2 {
-		text-transform: uppercase;
+		text-transform: uppercase;	
+		// @include letter-spacing();
 	}
 
 	.x-brand {
