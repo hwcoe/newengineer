@@ -25,6 +25,8 @@ Built using style.scss and its imports
 // Components
 // =============================================================================
 @import 'framework/css/_scss/post-carousel';
-@import "framework/css/_scss/post-slider";
+@import 'framework/css/_scss/post-slider';
 
- 
+// Site Styles
+// =============================================================================
+ @import 'framework/css/_scss/colophon';

@@ -1,6 +1,21 @@
 // =============================================================================
 // _COLOPHON.SCSS
 // -----------------------------------------------------------------------------
-// Site styles.
+// Footer overrides
 // =============================================================================
 
+.x-colophon {
+	
+	.bottom a, a {
+		color: $topbarBottomFooterColor;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.button {
+		text-decoration: none;
+	}
+	.widget {
+		color: $topbarBottomFooterColor;
+	}
+}
