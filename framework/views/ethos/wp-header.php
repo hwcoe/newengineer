@@ -25,6 +25,5 @@
   <?php x_get_view( 'ethos', '_landmark-header' ); ?>
 
  <?php if (is_front_page()): ?>
-  <!-- <div class="x-container max width"><?php x_get_view( 'ethos', '_post', 'slider' ); ?></div> -->
-  <?php x_get_view( 'ethos', '_post', 'slider' ); ?>
+  <?php x_get_view( 'ethos', '_post', 'slider' );   // show post slider on home page ?>
 <?php endif; ?>

@@ -60,9 +60,9 @@ if ( $is_blog || $is_archive || is_front_page() ) :
 	if (is_front_page()) {
 		$args = array(
 			 'post_type'      => 'post',
-				'posts_per_page' => $count,
+				'posts_per_page' => $count,	//not working atm
 				'orderby'        => 'date',
-				'category_name'  => 'featured' 
+				'category_name'  => 'featured'
 		);
 	}
 	?>
