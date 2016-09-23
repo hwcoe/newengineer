@@ -1,0 +1,11 @@
+/* --------------------------------------------------------------
+
+   Gravity Forms Overrides
+   
+-------------------------------------------------------------- */
+
+body .gform_wrapper .top_label li.gfield.gf_right_half,
+body .gform_wrapper .top_label li.gfield.gf_middle_third,
+body .gform_wrapper .top_label li.gfield.gf_right_third {
+  float: none !important;
+}
