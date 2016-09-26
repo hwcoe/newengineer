@@ -12,6 +12,7 @@
 //   01. Enqueue Parent Stylesheet
 //   02. Entry Meta
 //   03. Entry Cover
+//   04. Featured Index Content
 // =============================================================================
 
 // Enqueue Parent Stylesheet
@@ -188,4 +189,34 @@ if ( ! function_exists( 'x_ethos_entry_cover' ) ) :
 		<?php }
 
 	}
+endif;
+
+// Featured Index Content
+// =============================================================================
+
+if ( ! function_exists( 'x_ethos_featured_index' ) ) :
+  function x_ethos_featured_index() {
+
+    $entry_id                    = get_the_ID();
+    $index_featured_layout       = get_post_meta( $entry_id, '_x_ethos_index_featured_post_layout', true );
+    $index_featured_size         = get_post_meta( $entry_id, '_x_ethos_index_featured_post_size', true );
+    $index_featured_layout_class = ( $index_featured_layout == 'on' ) ? ' featured' : '';
+    $index_featured_size_class   = ( $index_featured_layout == 'on' ) ? ' ' . strtolower( $index_featured_size ) : '';
+    $is_index_featured_layout    = $index_featured_layout == 'on' && ! is_single();
+
+    ?>
+
+      <a href="<?php the_permalink(); ?>" class="entry-thumb<?php echo $index_featured_layout_class; echo $index_featured_size_class; ?>" style="<?php echo x_ethos_entry_cover_background_image_style(); ?>">
+        <?php if ( $is_index_featured_layout ) : ?>
+          <span class="featured-meta"><?php echo x_ethos_post_categories(); ?> / <?php echo get_the_date( 'F j, Y' ); ?></span>
+          <h2 class="h-featured"><span><?php x_the_alternate_title(); ?></span></h2>
+          <span class="featured-view"><?php _e( 'Read Story', '__x__' ); ?></span>
+        <?php else : ?>
+          <span class="view"><?php _e( 'Read Story', '__x__' ); ?></span>
+        <?php endif; ?>
+      </a>
+
+    <?php
+
+  }
 endif;
