@@ -11,6 +11,7 @@
 //   02. Up to Portrait Tablet                 (middle-bear)
 //   03. Portrait Tablet to Default Desktop    (old-bear)
 //   04. Tablets and Below                     (cubs)
+//   05. Tablets and Above                     (teenage-bear)
 //   05. Default Desktop                       (mama-bear)
 //   06. Large Desktop and Up                  (papa-bear)
 // =============================================================================
@@ -44,6 +45,11 @@
     }
   }
 
+  @else if $point == teenage-bear {
+    @media (min-width: $breakMedium + 1) {
+      @content;
+    }
+  }
   @else if $point == mama-bear {
     @media (min-width: $breakMediumLarge + 1) {
       @content;
