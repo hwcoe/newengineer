@@ -5,12 +5,14 @@
 
 
 .h-entry-cover {
-	top: auto;
-	bottom: 0;
+  top: auto;
+  bottom:0;
 	line-height: 16px;
-	span {
-		white-space: normal;
-		overflow: visible;
+  height: 6em;
+  span {
+	 height:32px;
+  	white-space: normal;
+		overflow: hidden;
 	}
 	.date {
 		font-size: 12px;
@@ -20,10 +22,8 @@
 .x-post-carousel-meta {
   height: 40px;
   left: $layoutSpacing * 1;
-  right: $layoutSpacing * 1;
-  
+  right: $layoutSpacing * 1;  
   > span {
-
     &:before,
     &:last-child:after {
       left:0;
@@ -37,9 +37,9 @@
     background-position: center right;
     &:hover {
       .h-entry-cover {
-        top: 0;
-        // bottom:100px;
-        @include transition(#{all 0.615s $easeOutExpo}); // transition not working
+        top: auto;
+        bottom: calc(100% - 6em);
+        @include transition(#{all 0.615s $easeOutExpo});
       }
       .x-post-carousel-meta {
         bottom: 25%;

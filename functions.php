@@ -10,9 +10,9 @@
 // TABLE OF CONTENTS
 // -----------------------------------------------------------------------------
 //   01. Enqueue Parent Stylesheet
-//   02. Entry Meta
-//   03. Entry Cover
-//   04. Featured Index Content
+//   02. Entry Meta - Override
+//   03. Entry Cover - Override
+//   04. Featured Index Content - Override
 // =============================================================================
 
 // Enqueue Parent Stylesheet
@@ -155,7 +155,7 @@ if ( ! function_exists( 'x_ethos_entry_meta' ) ) :
 endif;
 
 
-// Entry Cover
+// Entry Cover - Override
 // =============================================================================
 
 if ( ! function_exists( 'x_ethos_entry_cover' ) ) :
