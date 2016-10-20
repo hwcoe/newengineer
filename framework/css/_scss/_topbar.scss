@@ -5,9 +5,26 @@
 -------------------------------------------------------------- */
 
 .x-topbar {
-  .p-info {
-	@include break(middle-bear) {
-	  border: none;
+	.p-info {
+		width:100%;	
+		a {
+			color: rgba(255,255,255,1);
+		}
+		@include break(teenage-bear) {
+			.button {
+				float:right;
+			}
+		}
+		@include break(middle-bear) {
+			border: none;
+			.button {
+				display:block;
+			}
+		}
 	}
-   }
+	.x-social-global {
+		@include break(mama-bear) {
+			text-align:right;
+		}		
+	}
 }
