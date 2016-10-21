@@ -14,7 +14,7 @@
     <div class="x-topbar-inner x-container max width">
       <?php x_social_global(); ?>
       <?php if ( x_get_option( 'x_topbar_content' ) != '' ) : ?>
-      <p class="p-info"><?php echo x_get_option( 'x_topbar_content' ); ?></p>
+      	<p class="p-info"><?php echo x_get_option( 'x_topbar_content' ); ?></p>
       <?php endif; ?>
     </div>
   </div>
