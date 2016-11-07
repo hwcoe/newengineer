@@ -4,6 +4,24 @@
    
 -------------------------------------------------------------- */
 
+// Recent Posts
+// =============================================================================
 .x-recent-posts .h-recent-posts {
 	white-space: normal;
+}
+
+// Entry Share
+// =============================================================================
+.x-entry-share {
+	margin: 1em  0;
+	p {
+		font-size: inherit;
+	}
+	.x-share {
+		color: $navbarBackground;
+		&:hover {
+	    	color: $white;
+      		background-color: $navbarBackground;
+	    }
+	}
 }
