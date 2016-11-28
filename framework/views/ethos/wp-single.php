@@ -18,7 +18,7 @@ $fullwidth = get_post_meta( get_the_ID(), '_x_post_layout', true );
 
         <?php while ( have_posts() ) : the_post(); ?>
           <?php x_get_view( 'ethos', 'content', get_post_format() ); ?>
-          <?php echo do_shortcode( '[share title="Share" facebook="true" twitter="true" google_plus="false" linkedin="true" pinterest="false" reddit="false" email="false"]' ) ?>          
+          <?php echo do_shortcode( '[share title="Share" facebook="true" twitter="true" google_plus="false" linkedin="true" pinterest="false" reddit="false" email="true"]' ) ?>          
           <?php x_get_view( 'global', '_comments-template' ); ?>
         <?php endwhile; ?>
 
