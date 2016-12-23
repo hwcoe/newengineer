@@ -1,0 +1,49 @@
+/* --------------------------------------------------------------
+
+   POST AND PAGES OVERRIDES
+   
+-------------------------------------------------------------- */
+
+// Landmark Header
+// =============================================================================
+
+.x-header-landmark {
+  padding: 1.85em 0 1.15em;
+
+  @include break(middle-bear) {
+    text-align: center;
+  }
+   @include break(mama-bear) {	// stacked nav menu
+    padding-top: 7.85em;
+  }
+    @media (min-width: 1400px) {	//inline nav menu
+  	 padding-top: 1.85em;
+  }
+}
+
+.page,
+.single-post {
+  .x-main {
+    &.left .hentry .entry-featured,
+    &.right .hentry .entry-featured,
+    &.full .hentry .entry-featured {
+      @include break(mama-bear) {	// stacked nav menu
+     	margin-top: $layoutSpacing;
+     }
+    }
+  }
+}
+
+//
+// Entry header without post thumbnail
+//
+.no-post-thumbnail {
+	h1.entry-title {
+	   @include break(mama-bear) {	// stacked nav menu
+	     	margin-top: 2.25em;
+	     }
+	    @media (min-width: 1400px) {	//inline nav menu
+		  	margin-top: 0;
+		  }
+	}
+}
