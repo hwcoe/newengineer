@@ -27,18 +27,6 @@ add_filter( 'x_enqueue_parent_stylesheet', '__return_true' );
 if ( ! function_exists( 'x_ethos_entry_meta' ) ) :
 	function x_ethos_entry_meta() {
 
-		//
-		// Author.
-		//
- 
-		// $author = sprintf( ' %1$s %2$s</span>',
-		//   __( 'by', '__x__' ),
-		//   get_the_author()
-
-		// );
-
-			 // $author = '</span>';
-
 		$byline = get_post_meta(get_the_ID(), 'byline', true);
 		
 		if ($byline) {
