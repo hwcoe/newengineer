@@ -6,8 +6,13 @@
 
 // Recent Posts
 // =============================================================================
-.x-recent-posts .h-recent-posts {
-	white-space: normal;
+.x-recent-posts {
+	.h-recent-posts {
+		white-space: normal;
+	}
+	.x-recent-posts-img {
+	background: right center/cover no-repeat;
+	}
 }
 
 // Entry Share
@@ -23,5 +28,16 @@
 	    	color: $white;
       		background-color: $navbarBackground;
 	    }
+	}
+}
+
+// Accordion
+// =============================================================================
+.x-accordion-inner {
+	padding:2%;
+	h2 {
+		margin:0;
+		font-size:16px;
+		color: rgb(0,89,169);
 	}
 }

@@ -4,6 +4,28 @@
    
 -------------------------------------------------------------- */
 
+// All Posts and Pages
+// =============================================================================
+
+//
+// Entry featured.
+//
+
+a.entry-thumb {
+  background-position: right center;
+}
+.entry-thumb {
+  text-align: center;
+}
+//
+// Ability to hide featured image in single post view
+//
+.single-post.hide-featured {
+  .entry-featured {
+    display:none;
+  }
+}
+
 // Landmark Header
 // =============================================================================
 

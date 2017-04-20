@@ -1,0 +1,14 @@
+// =============================================================================
+// _NAVS.SCSS overrides
+// -----------------------------------------------------------------------------
+
+.x-navbar {
+	background: rgb(0,89,169) url(https://test.eng.ufl.edu/newengineer/wp-content/uploads/sites/103/2016/10/newengineer-header-bg.png) no-repeat left top;
+  background-size:cover;
+}
+.x-navbar .desktop .x-nav > li ul {
+  top:auto;
+}
+.x-nav-articles {
+  display:none;
+}
