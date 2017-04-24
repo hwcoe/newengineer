@@ -9,10 +9,11 @@
 // =============================================================================
 // TABLE OF CONTENTS
 // -----------------------------------------------------------------------------
-//   01. Enqueue Parent Stylesheet
-//   02. Entry Meta - Override
-//   03. Entry Cover - Override
-//   04. Featured Index Content - Override
+//		01. Enqueue Parent Stylesheet
+//		02. Entry Meta - Override
+//		03. Entry Cover - Override
+//		04. Featured Index Content - Override
+//		05. Admin Post Meta Boxes - Override
 // =============================================================================
 
 // Enqueue Parent Stylesheet
@@ -208,3 +209,12 @@ if ( ! function_exists( 'x_ethos_featured_index' ) ) :
 
   }
 endif;
+
+// Admin Post Meta Boxes
+// =============================================================================
+
+function newengineer_add_post_meta_boxes() {
+	remove_action ( 'add_meta_boxes', 'x_add_post_meta_boxes' );
+}
+
+// add_action( 'add_meta_boxes', 'newengineer_add_post_meta_boxes', 8 );
