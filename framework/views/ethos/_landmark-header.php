@@ -82,7 +82,7 @@ $disable_page_title = get_post_meta( get_the_ID(), '_x_entry_disable_page_title'
     <?php elseif ( is_404() ) : ?>
 
       <header class="x-header-landmark x-container max width">
-        <h1 class="h-landmark"><span><?php _e( 'Oops!', '__x__' ); ?></span></h1>
+        <h1 class="h-landmark"><span><?php _e( 'Page Not Found', '__x__' ); ?></span></h1>
       </header>
 
     <?php elseif ( is_year() ) : ?>
