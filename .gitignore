@@ -28,7 +28,6 @@ wp-content/backup-db/
 wp-content/backups/
 wp-content/blogs.dir/
 wp-content/cache/
-wp-content/themes/twenty*/
 wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
@@ -40,6 +39,10 @@ wp-content/wp-cache-config.php
 cgi-bin/
 sftp-config.json
 phpinfo.php
+_notes
+/fonts
+node_modules
+.npm-debug.log
 
 # OS generated files 
 .DS_Store
