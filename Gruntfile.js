@@ -13,8 +13,7 @@ module.exports = function(grunt) {
 			 style: 'compressed'
 		  },
 		  files: {
-			 './style.css' : 'sass/style.scss',
-			 './editor-style.css' : 'sass/editor-style.scss' 
+			 './style.css' : 'style.scss'
 		  } 
 		}  
 	  },
@@ -48,7 +47,7 @@ module.exports = function(grunt) {
 				}
 			},
 			css: {
-				files: ['./sass/*.scss'],
+				files: ['./framework/css/_scss/*.scss'],
 				tasks: ['sass', 'postcss']
 			} 
 		 }

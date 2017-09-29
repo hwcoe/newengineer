@@ -62,4 +62,10 @@
     }
   }
 
+   @else if $point == giant-bear {
+    @media (min-width: $breakExtraLarge) {
+      @content;
+    }
+  }
+
 }

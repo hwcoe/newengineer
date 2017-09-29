@@ -24,6 +24,14 @@ a.entry-thumb {
   .entry-featured {
 	 display:none;
   }
+  .entry-header {
+  	@include break(mama-bear) {	// stacked nav menu
+  	 	margin-top:75px;
+  	 }
+  	@include break(giant-bear) {	//inline nav menu
+	 	margin-top:0;
+  }
+  }
 }
 
 // Landmark Header
@@ -38,7 +46,7 @@ a.entry-thumb {
 	@include break(mama-bear) {	// stacked nav menu
 	 padding-top: 7.85em;
   }
-	 @media (min-width: 1400px) {	//inline nav menu
+  	@include break(giant-bear) {	//inline nav menu
 	 padding-top: 1.85em;
   }
 }
