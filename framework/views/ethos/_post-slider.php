@@ -6,11 +6,11 @@
 // Outputs the post slider that appears at the top of the blog.
 // =============================================================================
 
-$is_blog    = is_home();
+$is_blog    = is_home() || is_front_page();
 $is_archive = is_category() || is_tag();
 global $info;
 
-if ( $is_blog || $is_archive || is_front_page() ) :
+if ( $is_blog || $is_archive ) :
 
 	if ( $is_blog ) {
 		$info = array( 'blog', NULL, NULL, '_x_ethos_post_slider_blog_display' );
@@ -25,7 +25,7 @@ if ( $is_blog || $is_archive || is_front_page() ) :
 
 	$blog_slider_is_enabled    = $slider_enabled && $is_blog;
 	$archive_slider_is_enabled = $slider_enabled && $is_archive;
-	$is_enabled                = $blog_slider_is_enabled || $archive_slider_is_enabled || is_front_page();
+	$is_enabled                = $blog_slider_is_enabled || $archive_slider_is_enabled;
 
 	switch ( $display ) {
 		case 'most-commented' :
@@ -50,20 +50,10 @@ if ( $is_blog || $is_archive || is_front_page() ) :
 				'post_type'      => 'post',
 				'posts_per_page' => $count,
 				'orderby'        => 'date',
-				'category_name'  => 'featured' 
-				// 'meta_key'       => $info[3],
-				// 'meta_value'     => 'on'
+				'category_name'  => 'featured', 
+        		'ignore_sticky_posts'	=> true
 			);
 			break;
-	}
-	
-	if (is_front_page()) {
-		$args = array(
-			 'post_type'      => 'post',
-				'posts_per_page' => $count,	//not working atm
-				'orderby'        => 'date',
-				'category_name'  => 'featured'
-		);
 	}
 	?>
 
