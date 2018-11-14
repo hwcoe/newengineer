@@ -14,6 +14,7 @@
 //		03. Entry Cover - Override
 //		04. Featured Index Content - Override
 //		05. Admin Post Meta Boxes - Override
+//		06. Navbar Searchform Popup - Override
 // =============================================================================
 
 // Enqueue Parent Stylesheet
@@ -218,3 +219,37 @@ function newengineer_add_post_meta_boxes() {
 }
 
 // add_action( 'add_meta_boxes', 'newengineer_add_post_meta_boxes', 8 );
+
+// Navbar Searchform Popup
+// =============================================================================
+
+if ( ! function_exists( 'x_navbar_searchform_overlay' ) ) :
+  function x_navbar_searchform_overlay() {
+
+    if ( x_get_option( 'x_header_search_enable' ) == '1' ) :
+
+      ?>
+
+      <div class="x-searchform-overlay">
+        <div class="x-searchform-overlay-inner">
+          <div class="x-container max width">
+            <form method="get" id="searchform" class="form-search center-text" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+              <label for="s" class="cfc-h-tx tt-upper"><?php _e( 'Type and Press &ldquo;enter&rdquo; to Search', '__x__' ); ?></label>
+              <input type="text" id="s" class="search-query cfc-h-tx center-text tt-upper" name="s">
+
+
+              <button type="submit" class="btn-search">
+<span><i class="x-icon-search" data-x-icon-s="&#xf002;" aria-hidden="true"></i><span class="x-hidden-desktop"> Search</span></span>
+</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <?php
+
+    endif;
+
+  }
+  add_action( 'x_before_site_end', 'x_navbar_searchform_overlay' );
+endif;
