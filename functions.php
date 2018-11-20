@@ -17,13 +17,13 @@
 //		06. Navbar Searchform Popup - Override
 // =============================================================================
 
-// Enqueue Parent Stylesheet
+// 01. Enqueue Parent Stylesheet
 // =============================================================================
 
 add_filter( 'x_enqueue_parent_stylesheet', '__return_true' );
 
 
-// Entry Meta
+// 02. Entry Meta - Override
 // =============================================================================
 
 if ( ! function_exists( 'x_ethos_entry_meta' ) ) :
@@ -145,7 +145,7 @@ if ( ! function_exists( 'x_ethos_entry_meta' ) ) :
 endif;
 
 
-// Entry Cover - Override
+// 03. Entry Cover - Override
 // =============================================================================
 
 if ( ! function_exists( 'x_ethos_entry_cover' ) ) :
@@ -181,37 +181,37 @@ if ( ! function_exists( 'x_ethos_entry_cover' ) ) :
 	}
 endif;
 
-// Featured Index Content
+// 04. Featured Index Content - Override
 // =============================================================================
 
 if ( ! function_exists( 'x_ethos_featured_index' ) ) :
   function x_ethos_featured_index() {
 
-    $entry_id                    = get_the_ID();
-    $index_featured_layout       = get_post_meta( $entry_id, '_x_ethos_index_featured_post_layout', true );
-    $index_featured_size         = get_post_meta( $entry_id, '_x_ethos_index_featured_post_size', true );
-    $index_featured_layout_class = ( $index_featured_layout == 'on' ) ? ' featured' : '';
-    $index_featured_size_class   = ( $index_featured_layout == 'on' ) ? ' ' . strtolower( $index_featured_size ) : '';
-    $is_index_featured_layout    = $index_featured_layout == 'on' && ! is_single();
+	$entry_id                    = get_the_ID();
+	$index_featured_layout       = get_post_meta( $entry_id, '_x_ethos_index_featured_post_layout', true );
+	$index_featured_size         = get_post_meta( $entry_id, '_x_ethos_index_featured_post_size', true );
+	$index_featured_layout_class = ( $index_featured_layout == 'on' ) ? ' featured' : '';
+	$index_featured_size_class   = ( $index_featured_layout == 'on' ) ? ' ' . strtolower( $index_featured_size ) : '';
+	$is_index_featured_layout    = $index_featured_layout == 'on' && ! is_single();
 
-    ?>
+	?>
 
-      <a href="<?php the_permalink(); ?>" class="entry-thumb<?php echo $index_featured_layout_class; echo $index_featured_size_class; ?>" style="<?php echo x_ethos_entry_cover_background_image_style(); ?>">
-        <?php if ( $is_index_featured_layout ) : ?>
-          <span class="featured-meta"><?php echo x_ethos_post_categories(); ?> / <?php echo get_the_date( 'F j, Y' ); ?></span>
-          <h2 class="h-featured"><span><?php x_the_alternate_title(); ?></span></h2>
-          <span class="featured-view"><?php _e( 'Read Story', '__x__' ); ?></span>
-        <?php else : ?>
-          <span class="view"><?php _e( 'Read Story', '__x__' ); ?></span>
-        <?php endif; ?>
-      </a>
+	  <a href="<?php the_permalink(); ?>" class="entry-thumb<?php echo $index_featured_layout_class; echo $index_featured_size_class; ?>" style="<?php echo x_ethos_entry_cover_background_image_style(); ?>">
+		<?php if ( $is_index_featured_layout ) : ?>
+		  <span class="featured-meta"><?php echo x_ethos_post_categories(); ?> / <?php echo get_the_date( 'F j, Y' ); ?></span>
+		  <h2 class="h-featured"><span><?php x_the_alternate_title(); ?></span></h2>
+		  <span class="featured-view"><?php _e( 'Read Story', '__x__' ); ?></span>
+		<?php else : ?>
+		  <span class="view"><?php _e( 'Read Story', '__x__' ); ?></span>
+		<?php endif; ?>
+	  </a>
 
-    <?php
+	<?php
 
   }
 endif;
 
-// Admin Post Meta Boxes
+// 05. Admin Post Meta Boxes - Override
 // =============================================================================
 
 function newengineer_add_post_meta_boxes() {
@@ -220,35 +220,34 @@ function newengineer_add_post_meta_boxes() {
 
 // add_action( 'add_meta_boxes', 'newengineer_add_post_meta_boxes', 8 );
 
-// Navbar Searchform Popup
+// 06. Navbar Searchform Popup - Override
 // =============================================================================
 
 if ( ! function_exists( 'x_navbar_searchform_overlay' ) ) :
   function x_navbar_searchform_overlay() {
 
-    if ( x_get_option( 'x_header_search_enable' ) == '1' ) :
+	if ( x_get_option( 'x_header_search_enable' ) == '1' ) :
 
-      ?>
+	  ?>
 
-      <div class="x-searchform-overlay">
-        <div class="x-searchform-overlay-inner">
-          <div class="x-container max width">
-            <form method="get" id="searchform" class="form-search center-text" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-              <label for="s" class="cfc-h-tx tt-upper"><?php _e( 'Type and Press &ldquo;enter&rdquo; to Search', '__x__' ); ?></label>
-              <input type="text" id="s" class="search-query cfc-h-tx center-text tt-upper" name="s">
+		<div class="x-searchform-overlay">
+			<div class="x-searchform-overlay-inner">
+				<div class="x-container max width">
+					<form method="get" id="searchform" class="form-search center-text" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+            		<label for="s" class="visually-hidden"><?php esc_html_e( 'Search', '__x__' ); ?></label>
+						<input type="text" id="s" class="search-query cfc-h-tx center-text tt-upper" name="s" placeholder="<?php esc_attr_e( 'Search', '__x__' ); ?>">
+						<button type="submit" class="btn-search">
+							<span class="visually-hidden"><?php esc_html_e('Search', '__x__'); ?></span>
+    						<span><i class="x-icon-search" data-x-icon-s="&#xf002;" aria-hidden="true"></i><span class="x-hidden-desktop"> Search</span></span>
+						</button>
+					</form>
+				</div>
+			</div>
+	  </div>
 
+	  <?php
 
-              <button type="submit" class="btn-search">
-<span><i class="x-icon-search" data-x-icon-s="&#xf002;" aria-hidden="true"></i><span class="x-hidden-desktop"> Search</span></span>
-</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <?php
-
-    endif;
+	endif;
 
   }
   add_action( 'x_before_site_end', 'x_navbar_searchform_overlay' );
