@@ -49,9 +49,10 @@ $disable_page_title = get_post_meta( get_the_ID(), '_x_entry_disable_page_title'
 
     <?php elseif ( is_search() ) : ?>
 
-      <header class="x-header-landmark x-container max width">
-        <h1 class="h-landmark"><span><?php _e( 'Search Results', '__x__' ); ?></span></h1>
+       <header class="x-header-landmark x-container max width">
+       <h1 class="h-landmark"><span><?php _e( 'Search Results for &ldquo;', '__x__' ); echo the_search_query(); echo '&rdquo;' ?></span></h1>
       </header>
+
 
     <?php elseif ( is_category() || x_is_portfolio_category() || x_is_product_category() ) : ?>
 
