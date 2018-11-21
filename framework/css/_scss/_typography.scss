@@ -32,6 +32,7 @@ body {
 		color: $grayLight;
 		a {
 			color: $grayLight;
+			text-decoration: none;
 		}
 
 		span {
@@ -40,4 +41,7 @@ body {
 			padding: 7px 10px;
 		}
 	}
+}
+.p-meta a, .content a, .entry-content a {
+  text-decoration: underline;
 }
