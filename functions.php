@@ -15,6 +15,7 @@
 //		04. Featured Index Content - Override
 //		05. Admin Post Meta Boxes - Override
 //		06. Navbar Searchform Popup - Override
+//		07. Social Output - Override
 // =============================================================================
 
 // 01. Enqueue Parent Stylesheet
@@ -234,11 +235,11 @@ if ( ! function_exists( 'x_navbar_searchform_overlay' ) ) :
 			<div class="x-searchform-overlay-inner">
 				<div class="x-container max width">
 					<form method="get" id="searchform" class="form-search center-text" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-            		<label for="s" class="visually-hidden"><?php esc_html_e( 'Search', '__x__' ); ?></label>
+					<label for="s" class="visually-hidden"><?php esc_html_e( 'Search', '__x__' ); ?></label>
 						<input type="text" id="s" class="search-query cfc-h-tx center-text tt-upper" name="s" placeholder="<?php esc_attr_e( 'Search', '__x__' ); ?>">
 						<button type="submit" class="btn-search">
 							<span class="visually-hidden"><?php esc_html_e('Search', '__x__'); ?></span>
-    						<span><i class="x-icon-search" data-x-icon-s="&#xf002;" aria-hidden="true"></i><span class="x-hidden-desktop"> Search</span></span>
+							<span><span class="x-icon-search" data-x-icon-s="&#xf002;" aria-hidden="true"></span><span class="x-hidden-desktop"> Search</span></span>
 						</button>
 					</form>
 				</div>
@@ -252,3 +253,56 @@ if ( ! function_exists( 'x_navbar_searchform_overlay' ) ) :
   }
   add_action( 'x_before_site_end', 'x_navbar_searchform_overlay' );
 endif;
+
+// 07. Social Output - Override
+// =============================================================================
+
+if ( ! function_exists( 'x_social_global' ) ) :
+	function x_social_global() {
+
+		$facebook    = x_get_option( 'x_social_facebook' );
+		$twitter     = x_get_option( 'x_social_twitter' );
+		$google_plus = x_get_option( 'x_social_googleplus' );
+		$linkedin    = x_get_option( 'x_social_linkedin' );
+		$xing        = x_get_option( 'x_social_xing' );
+		$foursquare  = x_get_option( 'x_social_foursquare' );
+		$youtube     = x_get_option( 'x_social_youtube' );
+		$vimeo       = x_get_option( 'x_social_vimeo' );
+		$instagram   = x_get_option( 'x_social_instagram' );
+		$pinterest   = x_get_option( 'x_social_pinterest' );
+		$dribbble    = x_get_option( 'x_social_dribbble' );
+		$flickr      = x_get_option( 'x_social_flickr' );
+		$github      = x_get_option( 'x_social_github' );
+		$behance     = x_get_option( 'x_social_behance' );
+		$tumblr      = x_get_option( 'x_social_tumblr' );
+		$whatsapp    = x_get_option( 'x_social_whatsapp' );
+		$soundcloud  = x_get_option( 'x_social_soundcloud' );
+		$rss         = x_get_option( 'x_social_rss' );
+
+		$output = '<div class="x-social-global">';
+
+		if ( $facebook )    : $output .= '<a href="' . $facebook    . '" class="facebook" title="Facebook" target="_blank"><span class="x-icon-facebook-square" data-x-icon-b="&#xf082;" aria-hidden="true"></span><span class="sr-only"> Facebook</span></a>'; endif;
+		if ( $twitter )     : $output .= '<a href="' . $twitter     . '" class="twitter" title="Twitter" target="_blank"><span class="x-icon-twitter-square" data-x-icon-b="&#xf081;" aria-hidden="true"></span><span class="sr-only"> Twitter</span></a>'; endif;
+		if ( $google_plus ) : $output .= '<a href="' . $google_plus . '" class="google-plus" title="Google+" target="_blank"><span class="x-icon-google-plus-square" data-x-icon-b="&#xf0d4;" aria-hidden="true"></span><span class="sr-only"> Google+</span></a>'; endif;
+		if ( $linkedin )    : $output .= '<a href="' . $linkedin    . '" class="linkedin" title="LinkedIn" target="_blank"><span class="x-icon-linkedin-square" data-x-icon-b="&#xf08c;" aria-hidden="true" role="img"></span><span class="sr-only"> LinkedIn</span></a>'; endif;
+		if ( $xing )        : $output .= '<a href="' . $xing        . '" class="xing" title="XING" target="_blank"><span class="x-icon-xing-square" data-x-icon-b="&#xf169;" aria-hidden="true"></span><span class="sr-only"> XING</span></a>'; endif;
+		if ( $foursquare )  : $output .= '<a href="' . $foursquare  . '" class="foursquare" title="Foursquare" target="_blank"><span class="x-icon-foursquare" data-x-icon-b="&#xf180;" aria-hidden="true"></span><span class="sr-only"> Foursquare</span></a>'; endif;
+		if ( $youtube )     : $output .= '<a href="' . $youtube     . '" class="youtube" title="YouTube" target="_blank"><span class="x-icon-youtube-square" data-x-icon-b="&#xf431;" aria-hidden="true"></span><span class="sr-only"> YouTube</span></a>'; endif;
+		if ( $vimeo )       : $output .= '<a href="' . $vimeo       . '" class="vimeo" title="Vimeo" target="_blank"><span class="x-icon-vimeo-square" data-x-icon-b="&#xf194;" aria-hidden="true"></span><span class="sr-only"> Vimeo</span></a>'; endif;
+		if ( $instagram )   : $output .= '<a href="' . $instagram   . '" class="instagram" title="Instagram" target="_blank"><span class="x-icon-instagram" data-x-icon-b="&#xf16d;" aria-hidden="true"></span><span class="sr-only"> Instagram</span></a>'; endif;
+		if ( $pinterest )   : $output .= '<a href="' . $pinterest   . '" class="pinterest" title="Pinterest" target="_blank"><span class="x-icon-pinterest-square" data-x-icon-b="&#xf0d3;" aria-hidden="true"></span><span class="sr-only"> Pinterest</span></a>'; endif;
+		if ( $dribbble )    : $output .= '<a href="' . $dribbble    . '" class="dribbble" title="Dribbble" target="_blank"><span class="x-icon-dribbble" data-x-icon-b="&#xf17d;" aria-hidden="true"></span><span class="sr-only"> Dribbble</span></a>'; endif;
+		if ( $flickr )      : $output .= '<a href="' . $flickr      . '" class="flickr" title="Flickr" target="_blank"><span class="x-icon-flickr" data-x-icon-b="&#xf16e;" aria-hidden="true"></span><span class="sr-only"> Flickr</span></a>'; endif;
+		if ( $github )      : $output .= '<a href="' . $github      . '" class="github" title="GitHub" target="_blank"><span class="x-icon-github-square" data-x-icon-b="&#xf092;" aria-hidden="true"></span><span class="sr-only"> GitHub</span></a>'; endif;
+		if ( $behance )     : $output .= '<a href="' . $behance     . '" class="behance" title="Behance" target="_blank"><span class="x-icon-behance-square" data-x-icon-b="&#xf1b5;" aria-hidden="true"></span><span class="sr-only"> Behance</span></a>'; endif;
+		if ( $tumblr )      : $output .= '<a href="' . $tumblr      . '" class="tumblr" title="Tumblr" target="_blank"><span class="x-icon-tumblr-square" data-x-icon-b="&#xf174;" aria-hidden="true"></span><span class="sr-only"> Tumblr</span></a>'; endif;
+		if ( $whatsapp )    : $output .= '<a href="' . $whatsapp    . '" class="whatsapp" title="Whatsapp" target="_blank"><span class="x-icon-whatsapp" data-x-icon-b="&#xf232;" aria-hidden="true"></span><span class="sr-only"> Whatsapp</span></a>'; endif;
+		if ( $soundcloud )  : $output .= '<a href="' . $soundcloud  . '" class="soundcloud" title="SoundCloud" target="_blank"><span class="x-icon-soundcloud" data-x-icon-b="&#xf1be;" aria-hidden="true"></span><span class="sr-only"> SoundCloud</span></a>'; endif;
+		if ( $rss )         : $output .= '<a href="' . $rss         . '" class="rss" title="RSS" target="_blank"><span class="x-icon-rss-square" data-x-icon-s="&#xf143;" aria-hidden="true"></span><span class="sr-only"> RSS</span></a>'; endif;
+
+		$output .= '</div>';
+
+		echo $output;
+
+		}
+	endif;

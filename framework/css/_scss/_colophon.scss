@@ -5,8 +5,7 @@
 // =============================================================================
 
 .x-colophon {
-	
-	.bottom a, a {
+	a, .bottom a {
 		color: $topbarBottomFooterColor;
 		&:hover {
 			text-decoration: none;
@@ -17,5 +16,11 @@
 	}
 	.widget {
 		color: $topbarBottomFooterColor;
+	}
+}
+.x-colophon.bottom .x-nav li a {
+	color: $topbarBottomFooterColor;
+	&:hover {
+		text-decoration: none;
 	}
 }
