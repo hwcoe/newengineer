@@ -23,6 +23,13 @@
 		}
 	}
 	.x-social-global {
+		a {
+			color: rgba(255,255,255,1);
+			&:focus, &:hover, &:active {
+				outline:1px dotted #ffffff;
+				color: rgba(255,255,255,0.5);
+			}
+		}
 		@include break(mama-bear) {
 			text-align:right;
 		}		
