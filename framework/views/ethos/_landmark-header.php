@@ -59,7 +59,7 @@ $disable_page_title = get_post_meta( get_the_ID(), '_x_entry_disable_page_title'
       <?php
 
       $meta  = x_get_taxonomy_meta();
-      $title = ( $meta['archive-title'] != "" ) ? $meta['archive-title'] : __( single_cat_title("", false ), ‘__x__’ );
+      $title = ( $meta['archive-title'] != "" ) ? $meta['archive-title'] : __( single_cat_title("", false ), '__x__' );
 
       ?>
 

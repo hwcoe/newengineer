@@ -13,12 +13,15 @@
   <?php x_get_view( 'global', '_slider-above' ); ?>
 
   <header class="<?php x_masthead_class(); ?>" role="banner">
+    <a href="#main" id="skip-link" class="visually-hidden focusable">Skip to main content</a>
     <?php x_get_view( 'global', '_topbar' ); ?>
     <?php x_get_view( 'global', '_navbar' ); ?>
     <?php x_get_view( 'ethos', '_breadcrumbs' ); ?>
   </header>
 
   <?php x_get_view( 'global', '_slider-below' ); ?>
+  
+  <div id="main"></div>
   <?php x_get_view( 'ethos', '_landmark-header' ); ?>
 
  <?php if (is_front_page()): ?>
