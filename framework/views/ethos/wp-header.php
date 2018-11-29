@@ -12,7 +12,7 @@
 
   <?php x_get_view( 'global', '_slider-above' ); ?>
 
-  <header class="<?php x_masthead_class(); ?>" role="banner">
+  <header class="<?php x_masthead_class(); ?>" role="banner" aria-label="masthead">
     <a href="#main" id="skip-link" class="visually-hidden focusable">Skip to main content</a>
     <?php x_get_view( 'global', '_topbar' ); ?>
     <?php x_get_view( 'global', '_navbar' ); ?>

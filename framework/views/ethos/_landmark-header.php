@@ -17,40 +17,40 @@ $disable_page_title = get_post_meta( get_the_ID(), '_x_entry_disable_page_title'
 
     <?php if ( x_is_shop() || x_is_product() ) : ?>
 
-      <header class="x-header-landmark x-container max width">
-        <h1 class="h-landmark"><span><?php echo x_get_option( 'x_ethos_shop_title' ); ?></span></h1>
+      <header class="x-header-landmark x-container max width" aria-labelledby="header-landmark">
+        <h1 class="h-landmark" id="header-landmark"><?php echo x_get_option( 'x_ethos_shop_title' ); ?></h1>
       </header>
 
     <?php elseif ( x_is_bbpress() ) : ?>
 
-      <header class="x-header-landmark x-container max width">
-        <h1 class="h-landmark"><span><?php echo get_the_title(); ?></span></h1>
+      <header class="x-header-landmark x-container max width" aria-labelledby="header-landmark">
+        <h1 class="h-landmark" id="header-landmark"><?php echo get_the_title(); ?></h1>
       </header>
 
     <?php elseif ( x_is_buddypress() ) : ?>
       <?php if ( x_buddypress_is_component_with_landmark_header() ) : ?>
 
-        <header class="x-header-landmark x-container max width">
-          <h1 class="h-landmark"><span><?php echo x_buddypress_get_the_title(); ?></span></h1>
+        <header class="x-header-landmark x-container max width" aria-labelledby="header-landmark">
+          <h1 class="h-landmark" id="header-landmark"><?php echo x_buddypress_get_the_title(); ?></h1>
         </header>
 
       <?php endif; ?>
     <?php elseif ( is_page() ) : ?>
 
-      <header class="x-header-landmark x-container max width">
-        <h1 class="h-landmark entry-title"><span><?php the_title(); ?></span></h1>
+      <header class="x-header-landmark x-container max width" aria-labelledby="header-landmark">
+        <h1 class="h-landmark entry-title"><?php the_title(); ?></h1>
       </header>
 
     <?php elseif ( x_is_portfolio_item() ) : ?>
 
-      <header class="x-header-landmark x-container max width">
-        <h1 class="h-landmark"><span><?php the_title(); ?></span></h1>
+      <header class="x-header-landmark x-container max width" aria-labelledby="header-landmark">
+        <h1 class="h-landmark" id="header-landmark"><?php the_title(); ?></h1>
       </header>
 
     <?php elseif ( is_search() ) : ?>
 
-       <header class="x-header-landmark x-container max width">
-       <h1 class="h-landmark"><span><?php _e( 'Search Results for &ldquo;', '__x__' ); echo the_search_query(); echo '&rdquo;' ?></span></h1>
+       <header class="x-header-landmark x-container max width" aria-labelledby="header-landmark">
+       <h1 class="h-landmark" id="header-landmark"><?php _e( 'Search Results for &ldquo;', '__x__' ); echo the_search_query(); echo '&rdquo;' ?></h1>
       </header>
 
 
@@ -63,8 +63,8 @@ $disable_page_title = get_post_meta( get_the_ID(), '_x_entry_disable_page_title'
 
       ?>
 
-      <header class="x-header-landmark x-container max width">
-        <h1 class="h-landmark"><span><?php echo $title; ?></span></h1>
+      <header class="x-header-landmark x-container max width" aria-labelledby="header-landmark">
+        <h1 class="h-landmark" id="header-landmark"><?php echo $title; ?></h1>
       </header>
 
     <?php elseif ( is_tag() || x_is_portfolio_tag() || x_is_product_tag() ) : ?>
@@ -76,38 +76,38 @@ $disable_page_title = get_post_meta( get_the_ID(), '_x_entry_disable_page_title'
 
       ?>
 
-      <header class="x-header-landmark x-container max width">
-        <h1 class="h-landmark"><span><?php echo $title ?></span></h1>
+      <header class="x-header-landmark x-container max width" aria-labelledby="header-landmark">
+        <h1 class="h-landmark" id="header-landmark"><?php echo $title ?></h1>
       </header>
 
     <?php elseif ( is_404() ) : ?>
 
-      <header class="x-header-landmark x-container max width">
-        <h1 class="h-landmark"><span><?php _e( 'Page Not Found', '__x__' ); ?></span></h1>
+      <header class="x-header-landmark x-container max width" aria-labelledby="header-landmark">
+        <h1 class="h-landmark" id="header-landmark"><?php _e( 'Page Not Found', '__x__' ); ?></h1>
       </header>
 
     <?php elseif ( is_year() ) : ?>
 
-      <header class="x-header-landmark x-container max width">
-        <h1 class="h-landmark"><span><?php _e( 'Post Archive by Year', '__x__' ); ?></span></h1>
+      <header class="x-header-landmark x-container max width" aria-labelledby="header-landmark">
+        <h1 class="h-landmark" id="header-landmark"><?php _e( 'Post Archive by Year', '__x__' ); ?></h1>
       </header>
 
     <?php elseif ( is_month() ) : ?>
 
-      <header class="x-header-landmark x-container max width">
-        <h1 class="h-landmark"><span><?php _e( 'Post Archive by Month', '__x__' ); ?></span></h1>
+      <header class="x-header-landmark x-container max width" aria-labelledby="header-landmark">
+        <h1 class="h-landmark" id="header-landmark"><?php _e( 'Post Archive by Month', '__x__' ); ?></h1>
       </header>
 
     <?php elseif ( is_day() ) : ?>
 
-      <header class="x-header-landmark x-container max width">
-        <h1 class="h-landmark"><span><?php _e( 'Post Archive by Day', '__x__' ); ?></span></h1>
+      <header class="x-header-landmark x-container max width" aria-labelledby="header-landmark">
+        <h1 class="h-landmark" id="header-landmark"><?php _e( 'Post Archive by Day', '__x__' ); ?></h1>
       </header>
 
     <?php elseif ( x_is_portfolio() ) : ?>
 
-      <header class="x-header-landmark x-container max width">
-        <h1 class="h-landmark"><span><?php echo x_get_option( 'x_portfolio_title' ); ?></span></h1>
+      <header class="x-header-landmark x-container max width" aria-labelledby="header-landmark">
+        <h1 class="h-landmark" id="header-landmark"><?php echo x_get_option( 'x_portfolio_title' ); ?></h1>
       </header>
 
     <?php endif; ?>

@@ -12,6 +12,14 @@
 	padding: 0.25em 0.75em;
 	text-decoration: none !important;
 }
+.btn-search {
+	background-color: transparent;
+	border:none;
+	font-size: 24px;
+	padding: 8px 10px;
+	position:absolute;
+	right: 0;
+}
 .x-searchform-overlay {
 	background-color: rgba(0,0,0,0.825);
 }
@@ -28,6 +36,7 @@
 	border:none;
 	font-size: 24px;
 	padding: 8px 10px;
+	position: relative;
 }
 .x-searchform-overlay .form-search .btn-search:focus, 
 .x-searchform-overlay .form-search .btn-search:hover,
