@@ -11,6 +11,11 @@
 	font-size: 24px !important;
 	padding: 0.25em 0.75em;
 	text-decoration: none !important;
+	&:focus {
+		border-color: rgb(202,44,2);
+		background-color: rgb(255,108,69);
+		text-shadow: 0 0.075em 0.075em rgba(0,0,0,0.5);
+	}
 }
 .btn-search {
 	background-color: transparent;

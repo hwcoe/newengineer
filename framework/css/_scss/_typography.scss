@@ -12,7 +12,12 @@
 	font-family: 'gentona', Helvetica, Arial, sans-serif;
 }
 body {
-
+	a {
+		&:focus {
+			outline-width: 1px !important;
+			outline-style: dotted !important;
+		}
+	}
 	h1, h2, h3, h4, h5, h6, 
 	.h1, .h2, .h3, .h4, .h5, .h6 {
 		font-family: 'gentona', Helvetica, Arial, sans-serif;
@@ -43,5 +48,22 @@ body {
 	}
 }
 .p-meta a, .content a, .entry-content a {
-  text-decoration: underline;
+	text-decoration: underline;
+	&:focus, &:active, &:hover {
+		outline: 1px dotted $textColor !important;
+		text-decoration: none;
+	}
+}
+footer {
+	.widget {
+		ul li a, ol li a {
+			color: $white;
+		}
+	}
+	.widget_text a {
+		&:focus {
+			outline: 1px dotted $white !important;
+			text-decoration: none;
+		}
+	}
 }

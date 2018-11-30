@@ -70,8 +70,8 @@ $easeInOutBack:     cubic-bezier(0.680, -0.550, 0.265, 1.550) !default;
 
 $black:          #000 !default;
 $grayDarker:     #222 !default;
-$grayDark:       #333 !default;
-$gray:           #555 !default;
+$grayDark:       #333132 !default;
+$gray:           #606060 !default;
 $grayLight:      #999 !default;
 $grayLighter:    #eee !default;
 $white:          #fff !default;
@@ -81,16 +81,20 @@ $white:          #fff !default;
 // General Accent Colors.
 //
 
-$blue:        #049cdb !default;
-$blueDark:    #0064cd !default;
 $green:       #46a546 !default;
-$red:         #9d261d !default;
 $yellow:      #ffc40d !default;
-$orange:      #f89406 !default;
 $pink:        #c3325f !default;
 $purple:      #7a43b6 !default;
 
-
+$blue:                  #00529b !default;
+$blueDark: 				#084b81 !default;
+$blueLight: 			#3E7198 !default;
+$orangeLight:			#eba171 !default;
+$orange: 				#fa4616 !default;
+$cyan: 					#a9dcda !default;
+$teal: 					#d4edec !default;
+$red: 					#ed1c24 !default;
+$redLight: 				#f00 !default;
 
 // Buttons
 // =============================================================================
@@ -152,7 +156,7 @@ $skin:                         'light' !default;
 
 $baseModBackground:            $white                         !default;
 $siteBackground:               $baseModBackground             !default;
-$accentColor:                  #e74c3c                        !default;
+$accentColor:                  $orange                        !default;
 $widgetBorderColor:            darken($baseModBackground, 5%) !default;
 $shortcodeBorderColor:         rgba(0, 0, 0, 0.1)             !default;
 $shortcodeBoxShadow:           0 1px 2px rgba(0, 0, 0, 0.075) !default;
@@ -164,8 +168,8 @@ $topbarBottomFooterColor:      rgba(255, 255, 255, 1)      !default;
 // Scaffolding
 // =============================================================================
 
-$bodyBackground:    #e4e4e4 !default;
-$textColor:         #7a7a7a !default;
+$bodyBackground:    $white !default;
+$textColor:         $black !default;
 $layoutSpacing:     1.5em    !default;
 
 
